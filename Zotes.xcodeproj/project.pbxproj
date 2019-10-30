@@ -14,6 +14,7 @@
 		2E00718E236A1E0500937B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E00718D236A1E0500937B11 /* Assets.xcassets */; };
 		2E007191236A1E0500937B11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E00718F236A1E0500937B11 /* LaunchScreen.storyboard */; };
 		2E007199236A24DC00937B11 /* zotes.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E007198236A24DC00937B11 /* zotes.png */; };
+		2E0071BB236A32F000937B11 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0071BA236A32F000937B11 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2E007190236A1E0500937B11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E007192236A1E0500937B11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E007198236A24DC00937B11 /* zotes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zotes.png; sourceTree = "<group>"; };
+		2E0071BA236A32F000937B11 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +60,8 @@
 		2E007183236A1E0300937B11 /* Zotes */ = {
 			isa = PBXGroup;
 			children = (
+				2E00719B236A2B7600937B11 /* Controllers */,
 				2E007184236A1E0300937B11 /* AppDelegate.swift */,
-				2E007186236A1E0300937B11 /* FirstViewController.swift */,
-				2E007188236A1E0300937B11 /* SecondViewController.swift */,
 				2E00718A236A1E0300937B11 /* Main.storyboard */,
 				2E00718D236A1E0500937B11 /* Assets.xcassets */,
 				2E007198236A24DC00937B11 /* zotes.png */,
@@ -68,6 +69,16 @@
 				2E007192236A1E0500937B11 /* Info.plist */,
 			);
 			path = Zotes;
+			sourceTree = "<group>";
+		};
+		2E00719B236A2B7600937B11 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2E007186236A1E0300937B11 /* FirstViewController.swift */,
+				2E007188236A1E0300937B11 /* SecondViewController.swift */,
+				2E0071BA236A32F000937B11 /* SettingsViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +156,7 @@
 				2E007189236A1E0300937B11 /* SecondViewController.swift in Sources */,
 				2E007185236A1E0300937B11 /* AppDelegate.swift in Sources */,
 				2E007187236A1E0300937B11 /* FirstViewController.swift in Sources */,
+				2E0071BB236A32F000937B11 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

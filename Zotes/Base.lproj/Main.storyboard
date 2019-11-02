@@ -176,7 +176,7 @@
         <!--About-->
         <scene sceneID="3Tr-G8-slA">
             <objects>
-                <viewController storyboardIdentifier="aboutScreen" title="About" id="d6d-C5-8QE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="aboutScreen" title="About" id="d6d-C5-8QE" customClass="AboutApplicationtViewController" customModule="Zotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YOU-bW-dDI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

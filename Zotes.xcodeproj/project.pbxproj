@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		242978EFECBF993800A2E8A7 /* Pods_Zotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F4154812C11888EE4A1118 /* Pods_Zotes.framework */; };
 		2E007185236A1E0300937B11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E007184236A1E0300937B11 /* AppDelegate.swift */; };
 		2E007187236A1E0300937B11 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E007186236A1E0300937B11 /* FirstViewController.swift */; };
 		2E007189236A1E0300937B11 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E007188236A1E0300937B11 /* SecondViewController.swift */; };
@@ -15,9 +16,12 @@
 		2E007191236A1E0500937B11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E00718F236A1E0500937B11 /* LaunchScreen.storyboard */; };
 		2E007199236A24DC00937B11 /* zotes.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E007198236A24DC00937B11 /* zotes.png */; };
 		2E0071BB236A32F000937B11 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0071BA236A32F000937B11 /* SettingsViewController.swift */; };
+		2E04A8F4236DB28500AD87BD /* AboutApplicationtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E04A8F3236DB28500AD87BD /* AboutApplicationtViewController.swift */; };
+		2E04A8F6236DBE2400AD87BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E04A8F5236DBE2300AD87BD /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B208D72556A0208B79305CA /* Pods-Zotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zotes.release.xcconfig"; path = "Target Support Files/Pods-Zotes/Pods-Zotes.release.xcconfig"; sourceTree = "<group>"; };
 		2E007181236A1E0300937B11 /* Zotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E007184236A1E0300937B11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E007186236A1E0300937B11 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +32,10 @@
 		2E007192236A1E0500937B11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E007198236A24DC00937B11 /* zotes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zotes.png; sourceTree = "<group>"; };
 		2E0071BA236A32F000937B11 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2E04A8F3236DB28500AD87BD /* AboutApplicationtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutApplicationtViewController.swift; sourceTree = "<group>"; };
+		2E04A8F5236DBE2300AD87BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		42F4154812C11888EE4A1118 /* Pods_Zotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68DA6D104B14006C048C8427 /* Pods-Zotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zotes.debug.xcconfig"; path = "Target Support Files/Pods-Zotes/Pods-Zotes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				242978EFECBF993800A2E8A7 /* Pods_Zotes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +55,8 @@
 			children = (
 				2E007183236A1E0300937B11 /* Zotes */,
 				2E007182236A1E0300937B11 /* Products */,
+				32035F5AFDD6A02E0DD24BB8 /* Pods */,
+				D9E58FD18EB712705C82EAB7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +77,7 @@
 				2E00718D236A1E0500937B11 /* Assets.xcassets */,
 				2E007198236A24DC00937B11 /* zotes.png */,
 				2E00718F236A1E0500937B11 /* LaunchScreen.storyboard */,
+				2E04A8F5236DBE2300AD87BD /* GoogleService-Info.plist */,
 				2E007192236A1E0500937B11 /* Info.plist */,
 			);
 			path = Zotes;
@@ -77,8 +89,27 @@
 				2E007186236A1E0300937B11 /* FirstViewController.swift */,
 				2E007188236A1E0300937B11 /* SecondViewController.swift */,
 				2E0071BA236A32F000937B11 /* SettingsViewController.swift */,
+				2E04A8F3236DB28500AD87BD /* AboutApplicationtViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		32035F5AFDD6A02E0DD24BB8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				68DA6D104B14006C048C8427 /* Pods-Zotes.debug.xcconfig */,
+				2B208D72556A0208B79305CA /* Pods-Zotes.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D9E58FD18EB712705C82EAB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42F4154812C11888EE4A1118 /* Pods_Zotes.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -88,9 +119,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E007195236A1E0500937B11 /* Build configuration list for PBXNativeTarget "Zotes" */;
 			buildPhases = (
+				9B6FA795AF0CCF80CACC95B9 /* [CP] Check Pods Manifest.lock */,
 				2E00717D236A1E0300937B11 /* Sources */,
 				2E00717E236A1E0300937B11 /* Frameworks */,
 				2E00717F236A1E0300937B11 /* Resources */,
+				6AB3CD78B2736B18CD7975E8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,12 +174,55 @@
 			files = (
 				2E007191236A1E0500937B11 /* LaunchScreen.storyboard in Resources */,
 				2E007199236A24DC00937B11 /* zotes.png in Resources */,
+				2E04A8F6236DBE2400AD87BD /* GoogleService-Info.plist in Resources */,
 				2E00718E236A1E0500937B11 /* Assets.xcassets in Resources */,
 				2E00718C236A1E0300937B11 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6AB3CD78B2736B18CD7975E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zotes/Pods-Zotes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zotes/Pods-Zotes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zotes/Pods-Zotes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B6FA795AF0CCF80CACC95B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Zotes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2E00717D236A1E0300937B11 /* Sources */ = {
@@ -155,6 +231,7 @@
 			files = (
 				2E007189236A1E0300937B11 /* SecondViewController.swift in Sources */,
 				2E007185236A1E0300937B11 /* AppDelegate.swift in Sources */,
+				2E04A8F4236DB28500AD87BD /* AboutApplicationtViewController.swift in Sources */,
 				2E007187236A1E0300937B11 /* FirstViewController.swift in Sources */,
 				2E0071BB236A32F000937B11 /* SettingsViewController.swift in Sources */,
 			);
@@ -300,6 +377,7 @@
 		};
 		2E007196236A1E0500937B11 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68DA6D104B14006C048C8427 /* Pods-Zotes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -318,6 +396,7 @@
 		};
 		2E007197236A1E0500937B11 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B208D72556A0208B79305CA /* Pods-Zotes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>718728247248-76bme82lhkea9ljq60ja3d46ct05luk7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.718728247248-76bme82lhkea9ljq60ja3d46ct05luk7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCDlrthzoVhY3idTIgTxoRZOXNbEcpA3Fc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>718728247248</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>zero.zotes</string>
+	<key>PROJECT_ID</key>
+	<string>zero-zotes</string>
+	<key>STORAGE_BUCKET</key>
+	<string>zero-zotes.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:718728247248:ios:256e848e6a1c772b6d6bd5</string>
+	<key>DATABASE_URL</key>
+	<string>https://zero-zotes.firebaseio.com</string>
+</dict>
+</plist>

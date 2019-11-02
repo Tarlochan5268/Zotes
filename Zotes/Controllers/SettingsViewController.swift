@@ -11,7 +11,7 @@ import UIKit
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let settingsOptions = [
-        "About","Sign In"
+        "Sign In","About"
     ]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,9 +33,17 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
            
-            let aboutScreen = storyboard.instantiateViewController(withIdentifier:"aboutScreen")
+            let signInScreen = storyboard.instantiateViewController(withIdentifier:"signInScreen")
             
-            navigationController?.pushViewController(aboutScreen, animated: true)
+            navigationController?.pushViewController(signInScreen, animated: true)
+        }
+        else if(indexPath.row == 1)
+        {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+             let aboutScreen = storyboard.instantiateViewController(withIdentifier:"aboutScreen")
+             
+             navigationController?.pushViewController(aboutScreen, animated: true)
         }
     }
 

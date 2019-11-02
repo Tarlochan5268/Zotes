@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		242978EFECBF993800A2E8A7 /* Pods_Zotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F4154812C11888EE4A1118 /* Pods_Zotes.framework */; };
+		00CFB61B73309A7623F698F4 /* Pods_Zotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F4154812C11888EE4A1118 /* Pods_Zotes.framework */; };
 		2E007185236A1E0300937B11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E007184236A1E0300937B11 /* AppDelegate.swift */; };
 		2E007187236A1E0300937B11 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E007186236A1E0300937B11 /* FirstViewController.swift */; };
 		2E007189236A1E0300937B11 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E007188236A1E0300937B11 /* SecondViewController.swift */; };
@@ -18,10 +18,11 @@
 		2E0071BB236A32F000937B11 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0071BA236A32F000937B11 /* SettingsViewController.swift */; };
 		2E04A8F4236DB28500AD87BD /* AboutApplicationtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E04A8F3236DB28500AD87BD /* AboutApplicationtViewController.swift */; };
 		2E04A8F6236DBE2400AD87BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E04A8F5236DBE2300AD87BD /* GoogleService-Info.plist */; };
+		2E04A8F8236DC05F00AD87BD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E04A8F7236DC05F00AD87BD /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2B208D72556A0208B79305CA /* Pods-Zotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zotes.release.xcconfig"; path = "Target Support Files/Pods-Zotes/Pods-Zotes.release.xcconfig"; sourceTree = "<group>"; };
+		03A2DA55D8E9561DB5163EF9 /* Pods-Zotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zotes.debug.xcconfig"; path = "Target Support Files/Pods-Zotes/Pods-Zotes.debug.xcconfig"; sourceTree = "<group>"; };
 		2E007181236A1E0300937B11 /* Zotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E007184236A1E0300937B11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E007186236A1E0300937B11 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -34,8 +35,9 @@
 		2E0071BA236A32F000937B11 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2E04A8F3236DB28500AD87BD /* AboutApplicationtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutApplicationtViewController.swift; sourceTree = "<group>"; };
 		2E04A8F5236DBE2300AD87BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2E04A8F7236DC05F00AD87BD /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		42F4154812C11888EE4A1118 /* Pods_Zotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		68DA6D104B14006C048C8427 /* Pods-Zotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zotes.debug.xcconfig"; path = "Target Support Files/Pods-Zotes/Pods-Zotes.debug.xcconfig"; sourceTree = "<group>"; };
+		E749FCF7AC65A7479E684E91 /* Pods-Zotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zotes.release.xcconfig"; path = "Target Support Files/Pods-Zotes/Pods-Zotes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				242978EFECBF993800A2E8A7 /* Pods_Zotes.framework in Frameworks */,
+				00CFB61B73309A7623F698F4 /* Pods_Zotes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,8 +57,8 @@
 			children = (
 				2E007183236A1E0300937B11 /* Zotes */,
 				2E007182236A1E0300937B11 /* Products */,
-				32035F5AFDD6A02E0DD24BB8 /* Pods */,
 				D9E58FD18EB712705C82EAB7 /* Frameworks */,
+				D23052F0D750ED3707EEDE25 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,15 +92,16 @@
 				2E007188236A1E0300937B11 /* SecondViewController.swift */,
 				2E0071BA236A32F000937B11 /* SettingsViewController.swift */,
 				2E04A8F3236DB28500AD87BD /* AboutApplicationtViewController.swift */,
+				2E04A8F7236DC05F00AD87BD /* SignInViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		32035F5AFDD6A02E0DD24BB8 /* Pods */ = {
+		D23052F0D750ED3707EEDE25 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				68DA6D104B14006C048C8427 /* Pods-Zotes.debug.xcconfig */,
-				2B208D72556A0208B79305CA /* Pods-Zotes.release.xcconfig */,
+				03A2DA55D8E9561DB5163EF9 /* Pods-Zotes.debug.xcconfig */,
+				E749FCF7AC65A7479E684E91 /* Pods-Zotes.release.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
@@ -123,7 +126,7 @@
 				2E00717D236A1E0300937B11 /* Sources */,
 				2E00717E236A1E0300937B11 /* Frameworks */,
 				2E00717F236A1E0300937B11 /* Resources */,
-				6AB3CD78B2736B18CD7975E8 /* [CP] Embed Pods Frameworks */,
+				147144A7F8BF4BB9737BA443 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,7 +186,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6AB3CD78B2736B18CD7975E8 /* [CP] Embed Pods Frameworks */ = {
+		147144A7F8BF4BB9737BA443 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -231,6 +234,7 @@
 			files = (
 				2E007189236A1E0300937B11 /* SecondViewController.swift in Sources */,
 				2E007185236A1E0300937B11 /* AppDelegate.swift in Sources */,
+				2E04A8F8236DC05F00AD87BD /* SignInViewController.swift in Sources */,
 				2E04A8F4236DB28500AD87BD /* AboutApplicationtViewController.swift in Sources */,
 				2E007187236A1E0300937B11 /* FirstViewController.swift in Sources */,
 				2E0071BB236A32F000937B11 /* SettingsViewController.swift in Sources */,
@@ -313,7 +317,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -368,6 +372,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -377,7 +382,7 @@
 		};
 		2E007196236A1E0500937B11 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68DA6D104B14006C048C8427 /* Pods-Zotes.debug.xcconfig */;
+			baseConfigurationReference = 03A2DA55D8E9561DB5163EF9 /* Pods-Zotes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -396,7 +401,7 @@
 		};
 		2E007197236A1E0500937B11 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2B208D72556A0208B79305CA /* Pods-Zotes.release.xcconfig */;
+			baseConfigurationReference = E749FCF7AC65A7479E684E91 /* Pods-Zotes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

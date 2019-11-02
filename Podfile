@@ -6,7 +6,6 @@ target 'Zotes' do
   use_frameworks!
 
   # Pods for Zotes
-
 # Add the Firebase pod for Google Analytics
 pod 'Firebase/Analytics'
 
@@ -14,4 +13,14 @@ pod 'Firebase/Analytics'
 # For example, to use Firebase Authentication and Cloud Firestore
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
+pod 'FirebaseABTesting'
+pod 'FirebaseAuth'
+pod 'FirebaseCore'
+pod 'FirebaseDatabase'
+pod 'FirebaseFirestore'
+pod 'FirebaseFunctions'
+pod 'FirebaseMessaging'
+pod 'FirebaseRemoteConfig'
+pod 'FirebaseStorage'
+
 end

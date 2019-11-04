@@ -55,7 +55,7 @@ class SignUpViewController: UIViewController {
             let pass = password.text
             let fullname = fullName.text
             
-            ref.child("users").child("\(em!)").setValue(["fullname":fullname,"password":pass])
+            ref.child("users").child("\(em!)").setValue(["fullName":fullname,"password":pass])
         }
         
         

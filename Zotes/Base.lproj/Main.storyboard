@@ -288,7 +288,7 @@
         <!--Sign Up-->
         <scene sceneID="imc-of-kQw">
             <objects>
-                <viewController storyboardIdentifier="signUpScreen" title="Sign Up" id="3RR-5q-4Sn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUpScreen" title="Sign Up" id="3RR-5q-4Sn" customClass="SignUpViewController" customModule="Zotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gQ4-Aq-wKB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,6 +336,9 @@
                                 <rect key="frame" x="180" y="445" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="onSignUp:" destination="3RR-5q-4Sn" eventType="touchUpInside" id="JZC-VL-3Xe"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1f-WM-OVB">
                                 <rect key="frame" x="20" y="108" width="159" height="53"/>
@@ -355,6 +358,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="clO-90-3Fr"/>
                     </view>
+                    <connections>
+                        <outlet property="email" destination="PuC-O5-H6f" id="IK4-c8-Mli"/>
+                        <outlet property="fullName" destination="GnV-Fp-woZ" id="g4r-1A-iAx"/>
+                        <outlet property="password" destination="Iwt-Nj-UXt" id="YTL-Iq-2Hi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXo-Al-A8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

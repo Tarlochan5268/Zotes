@@ -19,7 +19,9 @@
 		2E04A8F4236DB28500AD87BD /* AboutApplicationtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E04A8F3236DB28500AD87BD /* AboutApplicationtViewController.swift */; };
 		2E04A8F6236DBE2400AD87BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E04A8F5236DBE2300AD87BD /* GoogleService-Info.plist */; };
 		2E04A8F8236DC05F00AD87BD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E04A8F7236DC05F00AD87BD /* SignInViewController.swift */; };
+		2E6DBDA023760C29003E20C3 /* Zotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E6DBD9E23760C29003E20C3 /* Zotes.xcdatamodeld */; };
 		2E8A3165236DDB8D00282700 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8A3164236DDB8D00282700 /* SignUpViewController.swift */; };
+		2E8A322C2370CA9800282700 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8A322B2370CA9800282700 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +39,9 @@
 		2E04A8F3236DB28500AD87BD /* AboutApplicationtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutApplicationtViewController.swift; sourceTree = "<group>"; };
 		2E04A8F5236DBE2300AD87BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2E04A8F7236DC05F00AD87BD /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		2E6DBD9F23760C29003E20C3 /* Zotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zotes.xcdatamodel; sourceTree = "<group>"; };
 		2E8A3164236DDB8D00282700 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		2E8A322B2370CA9800282700 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		42F4154812C11888EE4A1118 /* Pods_Zotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E749FCF7AC65A7479E684E91 /* Pods-Zotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zotes.release.xcconfig"; path = "Target Support Files/Pods-Zotes/Pods-Zotes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +61,7 @@
 		2E007178236A1E0300937B11 = {
 			isa = PBXGroup;
 			children = (
+				2E6DBD9E23760C29003E20C3 /* Zotes.xcdatamodeld */,
 				2E007183236A1E0300937B11 /* Zotes */,
 				2E007182236A1E0300937B11 /* Products */,
 				D9E58FD18EB712705C82EAB7 /* Frameworks */,
@@ -75,6 +80,7 @@
 		2E007183236A1E0300937B11 /* Zotes */ = {
 			isa = PBXGroup;
 			children = (
+				2E8A322A2370CA7F00282700 /* Extensions */,
 				2E00719B236A2B7600937B11 /* Controllers */,
 				2E007184236A1E0300937B11 /* AppDelegate.swift */,
 				2E00718A236A1E0300937B11 /* Main.storyboard */,
@@ -98,6 +104,14 @@
 				2E8A3164236DDB8D00282700 /* SignUpViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2E8A322A2370CA7F00282700 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2E8A322B2370CA9800282700 /* StringExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D23052F0D750ED3707EEDE25 /* Pods */ = {
@@ -238,6 +252,8 @@
 				2E8A3165236DDB8D00282700 /* SignUpViewController.swift in Sources */,
 				2E007185236A1E0300937B11 /* AppDelegate.swift in Sources */,
 				2E04A8F8236DC05F00AD87BD /* SignInViewController.swift in Sources */,
+				2E6DBDA023760C29003E20C3 /* Zotes.xcdatamodeld in Sources */,
+				2E8A322C2370CA9800282700 /* StringExtension.swift in Sources */,
 				2E04A8F4236DB28500AD87BD /* AboutApplicationtViewController.swift in Sources */,
 				2E007187236A1E0300937B11 /* FirstViewController.swift in Sources */,
 				2E0071BB236A32F000937B11 /* SettingsViewController.swift in Sources */,
@@ -443,6 +459,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2E6DBD9E23760C29003E20C3 /* Zotes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2E6DBD9F23760C29003E20C3 /* Zotes.xcdatamodel */,
+			);
+			currentVersion = 2E6DBD9F23760C29003E20C3 /* Zotes.xcdatamodel */;
+			path = Zotes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2E007179236A1E0300937B11 /* Project object */;
 }

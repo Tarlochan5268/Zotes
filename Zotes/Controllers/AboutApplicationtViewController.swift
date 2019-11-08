@@ -16,7 +16,12 @@ class AboutApplicationtViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func openGithub(_ sender: UIButton) {
+        if let url = URL(string: "https://github.com/narangkishore98/Zotes") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

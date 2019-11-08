@@ -38,9 +38,17 @@ class SignUpViewController: UIViewController {
             
             self.present(alert, animated: true)
         }
+        else if(!(email.text! as String).isEmail())
+        {
+            let alert = UIAlertController(title: "Error", message: "Please Enter a valid Email.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+        }
         else
         {
-            ref.observe(.value, with: {(snapshot) in if(snapshot.childSnapshot(forPath: "users").hasChild("Narang"))
+            ref.observe(.value, with: {(snapshot) in if(snapshot.childSnapshot(forPath: "users").hasChild(self.email.text!.convertToFirebaseCompatible()))
                 {
                     let alert = UIAlertController(title: "Warning", message: "User Already Exists. Please Try Login or Forgot Password.", preferredStyle: .alert)
                 
@@ -50,8 +58,9 @@ class SignUpViewController: UIViewController {
                 }
                 
             })
+        }
             
-            let em = email.text
+            let em = email.text?.convertToFirebaseCompatible()
             let pass = password.text
             let fullname = fullName.text
             
@@ -60,7 +69,8 @@ class SignUpViewController: UIViewController {
         
         
         
-    }
+    
+
     
     func popToLogin(alert:UIAlertAction!)
     {

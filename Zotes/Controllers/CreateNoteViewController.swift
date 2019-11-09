@@ -11,6 +11,7 @@ import CoreLocation
 import MapKit
 class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     
+    var images:[UIImage] = []
    
     @IBAction func optionsTapped(_ sender: Any) {
         
@@ -31,44 +32,38 @@ class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UI
         
         present(alert, animated: true, completion: nil)
     }
+    
     let locationmanager = CLLocationManager()
-    override func viewWillAppear(_ animated: Bool) {
-        // Do any additional setup after loading the view.
-               
-               locationmanager.requestAlwaysAuthorization()
-               locationmanager.requestWhenInUseAuthorization()
-               if CLLocationManager.locationServicesEnabled()
-               {
-                   locationmanager.delegate = self
-                   locationmanager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-                   locationmanager.startUpdatingLocation()
-               }
-        
-        
-      
-        
-        
-        
-        
-        
-        
-        if let currentLocation = locationmanager.location
-        {
-            let geo = CLGeocoder()
-            print("GEO OBJECT CREATED")
-            geo.reverseGeocodeLocation(currentLocation, completionHandler: {(placemark, error) in
- 
-                print(placemark![0].locality as Any)
-                print(placemark![0].name as Any)
-       
-            })
-        }
-        
-    }
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       // Do any additional setup after loading the view.
+                  
+                  locationmanager.requestAlwaysAuthorization()
+                  locationmanager.requestWhenInUseAuthorization()
+                  if CLLocationManager.locationServicesEnabled()
+                  {
+                      locationmanager.delegate = self
+                      locationmanager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+                      locationmanager.startUpdatingLocation()
+                  }
+           
+           
     
+           
+           if let currentLocation = locationmanager.location
+           {
+               let geo = CLGeocoder()
+         
+               geo.reverseGeocodeLocation(currentLocation, completionHandler: {(placemark, error) in
+    
+                   print(placemark![0].locality as Any)
+                   print(placemark![0].name as Any)
+          
+               })
+           }
         
     }
     
@@ -80,9 +75,12 @@ class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UI
     }
 
     @IBOutlet weak var titleObj: UITextField!
-    @IBOutlet weak var navigation: UINavigationBar!
+ 
     @IBAction func title(_ sender: Any) {
-        
+        self.navigationItem.title  = titleObj.text!
+        self.navigationItem.prompt  = "New Note"
+
+
     }
     @IBOutlet weak var note: UITextView!
     
@@ -102,13 +100,22 @@ class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UI
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
 
-        guard let image = info[.editedImage] as? UIImage else {
+        guard let image = info[.originalImage] as? UIImage else {
             print("No image found")
             return
         }
 
         // print out the image size as a test
         print(image)
+        images.append(image)
+        
+        let imageName = "NotesPic" // your image name here
+        let imagePath: String = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(imageName).png"
+        let imageUrl: URL = URL(fileURLWithPath: imagePath)
+        let newImage: UIImage = image
+        try? newImage.pngData()?.write(to: imageUrl)
     }
+    
+   
 }
 

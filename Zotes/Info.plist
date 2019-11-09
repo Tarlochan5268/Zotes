@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please provide the access of Photos to attach the images from Photos</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Please provide the access of Camera to attach the images from Camera.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Zotes wants to Access your Location</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Zotes wants to Access your Location</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

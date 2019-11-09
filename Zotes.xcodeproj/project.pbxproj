@@ -10,7 +10,7 @@
 		00CFB61B73309A7623F698F4 /* Pods_Zotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F4154812C11888EE4A1118 /* Pods_Zotes.framework */; };
 		2E007185236A1E0300937B11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E007184236A1E0300937B11 /* AppDelegate.swift */; };
 		2E007187236A1E0300937B11 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E007186236A1E0300937B11 /* FirstViewController.swift */; };
-		2E007189236A1E0300937B11 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E007188236A1E0300937B11 /* SecondViewController.swift */; };
+		2E007189236A1E0300937B11 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E007188236A1E0300937B11 /* CreateNoteViewController.swift */; };
 		2E00718C236A1E0300937B11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E00718A236A1E0300937B11 /* Main.storyboard */; };
 		2E00718E236A1E0500937B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E00718D236A1E0500937B11 /* Assets.xcassets */; };
 		2E007191236A1E0500937B11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E00718F236A1E0500937B11 /* LaunchScreen.storyboard */; };
@@ -20,6 +20,8 @@
 		2E04A8F6236DBE2400AD87BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E04A8F5236DBE2300AD87BD /* GoogleService-Info.plist */; };
 		2E04A8F8236DC05F00AD87BD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E04A8F7236DC05F00AD87BD /* SignInViewController.swift */; };
 		2E6DBDA023760C29003E20C3 /* Zotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E6DBD9E23760C29003E20C3 /* Zotes.xcdatamodeld */; };
+		2E6DBDA32376FC8E003E20C3 /* ZotesCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6DBDA22376FC8E003E20C3 /* ZotesCardTableViewCell.swift */; };
+		2E6DBDA523772F6C003E20C3 /* dots.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E6DBDA423772F6C003E20C3 /* dots.png */; };
 		2E8A3165236DDB8D00282700 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8A3164236DDB8D00282700 /* SignUpViewController.swift */; };
 		2E8A322C2370CA9800282700 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8A322B2370CA9800282700 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
@@ -29,7 +31,7 @@
 		2E007181236A1E0300937B11 /* Zotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E007184236A1E0300937B11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E007186236A1E0300937B11 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		2E007188236A1E0300937B11 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		2E007188236A1E0300937B11 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
 		2E00718B236A1E0300937B11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2E00718D236A1E0500937B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E007190236A1E0500937B11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +42,8 @@
 		2E04A8F5236DBE2300AD87BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2E04A8F7236DC05F00AD87BD /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		2E6DBD9F23760C29003E20C3 /* Zotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zotes.xcdatamodel; sourceTree = "<group>"; };
+		2E6DBDA22376FC8E003E20C3 /* ZotesCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZotesCardTableViewCell.swift; sourceTree = "<group>"; };
+		2E6DBDA423772F6C003E20C3 /* dots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dots.png; sourceTree = "<group>"; };
 		2E8A3164236DDB8D00282700 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2E8A322B2370CA9800282700 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		42F4154812C11888EE4A1118 /* Pods_Zotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +84,7 @@
 		2E007183236A1E0300937B11 /* Zotes */ = {
 			isa = PBXGroup;
 			children = (
+				2E6DBDA12376FC6B003E20C3 /* Customs */,
 				2E8A322A2370CA7F00282700 /* Extensions */,
 				2E00719B236A2B7600937B11 /* Controllers */,
 				2E007184236A1E0300937B11 /* AppDelegate.swift */,
@@ -87,6 +92,7 @@
 				2E00718D236A1E0500937B11 /* Assets.xcassets */,
 				2E007198236A24DC00937B11 /* zotes.png */,
 				2E00718F236A1E0500937B11 /* LaunchScreen.storyboard */,
+				2E6DBDA423772F6C003E20C3 /* dots.png */,
 				2E04A8F5236DBE2300AD87BD /* GoogleService-Info.plist */,
 				2E007192236A1E0500937B11 /* Info.plist */,
 			);
@@ -97,13 +103,21 @@
 			isa = PBXGroup;
 			children = (
 				2E007186236A1E0300937B11 /* FirstViewController.swift */,
-				2E007188236A1E0300937B11 /* SecondViewController.swift */,
+				2E007188236A1E0300937B11 /* CreateNoteViewController.swift */,
 				2E0071BA236A32F000937B11 /* SettingsViewController.swift */,
 				2E04A8F3236DB28500AD87BD /* AboutApplicationtViewController.swift */,
 				2E04A8F7236DC05F00AD87BD /* SignInViewController.swift */,
 				2E8A3164236DDB8D00282700 /* SignUpViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2E6DBDA12376FC6B003E20C3 /* Customs */ = {
+			isa = PBXGroup;
+			children = (
+				2E6DBDA22376FC8E003E20C3 /* ZotesCardTableViewCell.swift */,
+			);
+			path = Customs;
 			sourceTree = "<group>";
 		};
 		2E8A322A2370CA7F00282700 /* Extensions */ = {
@@ -194,6 +208,7 @@
 				2E007191236A1E0500937B11 /* LaunchScreen.storyboard in Resources */,
 				2E007199236A24DC00937B11 /* zotes.png in Resources */,
 				2E04A8F6236DBE2400AD87BD /* GoogleService-Info.plist in Resources */,
+				2E6DBDA523772F6C003E20C3 /* dots.png in Resources */,
 				2E00718E236A1E0500937B11 /* Assets.xcassets in Resources */,
 				2E00718C236A1E0300937B11 /* Main.storyboard in Resources */,
 			);
@@ -248,11 +263,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E007189236A1E0300937B11 /* SecondViewController.swift in Sources */,
+				2E007189236A1E0300937B11 /* CreateNoteViewController.swift in Sources */,
 				2E8A3165236DDB8D00282700 /* SignUpViewController.swift in Sources */,
 				2E007185236A1E0300937B11 /* AppDelegate.swift in Sources */,
 				2E04A8F8236DC05F00AD87BD /* SignInViewController.swift in Sources */,
 				2E6DBDA023760C29003E20C3 /* Zotes.xcdatamodeld in Sources */,
+				2E6DBDA32376FC8E003E20C3 /* ZotesCardTableViewCell.swift in Sources */,
 				2E8A322C2370CA9800282700 /* StringExtension.swift in Sources */,
 				2E04A8F4236DB28500AD87BD /* AboutApplicationtViewController.swift in Sources */,
 				2E007187236A1E0300937B11 /* FirstViewController.swift in Sources */,

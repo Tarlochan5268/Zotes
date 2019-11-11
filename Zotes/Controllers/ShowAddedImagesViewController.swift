@@ -8,8 +8,29 @@
 
 import UIKit
 
-class ShowAddedImagesViewController: UIViewController {
+class ShowAddedImagesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+      //  var cell = UICollectionViewCell.reusable
 
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ShowAddedImageCollectionViewCell
+        
+        cell.imageView.image = images[indexPath.row]
+        
+        return cell
+        
+        
+    }
+    
+
+    var images:[UIImage]!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

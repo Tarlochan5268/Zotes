@@ -23,7 +23,7 @@ class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UI
         alert.addAction(UIAlertAction(title: "Add Image from Camera", style: .default, handler:openCamera ))
          
         
-        alert.addAction(UIAlertAction(title: "View Attached Images", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "View Attached Images", style: .default, handler: openSelectedImages(action:)))
        
         alert.addAction(UIAlertAction(title: "Save", style: .default, handler: nil))
         
@@ -40,6 +40,7 @@ class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
        // Do any additional setup after loading the view.
+        self.hideKeyboardWhenTappedAround() 
                   
                   locationmanager.requestAlwaysAuthorization()
                   locationmanager.requestWhenInUseAuthorization()
@@ -64,6 +65,10 @@ class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UI
           
                })
            }
+        else
+           {
+            
+        }
         
     }
     
@@ -78,26 +83,67 @@ class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UI
  
     @IBAction func title(_ sender: Any) {
         self.navigationItem.title  = titleObj.text!
-        self.navigationItem.prompt  = "New Note"
+       
 
 
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        
+        print(images)
     }
     @IBOutlet weak var note: UITextView!
     
     
     func openCamera(action:UIAlertAction) -> Void
     {
-        let vc = UIImagePickerController()
-        vc.sourceType = .camera
+        if UIImagePickerController.isSourceTypeAvailable(.camera)
+        {
+            let vc = UIImagePickerController()
+            vc.sourceType = .camera
 
-        vc.delegate = self
-        present(vc, animated: true)
+            vc.delegate = self
+            present(vc, animated: true)
+        }
+        else
+        {
+                let alert = UIAlertController(title: "Error", message: "Camera isn't working properly on this iOS device.", preferredStyle:.alert)
+                      
+ 
+                      alert.addAction(UIAlertAction(title:"OK", style:.cancel, handler: nil))
+                      present(alert, animated: true)
+        }
     }
     func openGallary(action:UIAlertAction) -> Void
     {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum)
+        {
+            let vc = UIImagePickerController()
+            vc.sourceType = .savedPhotosAlbum
+            vc.delegate = self
+            vc.allowsEditing = false
+            present(vc, animated:true)
+        }
+        else
+        {
+            let alert = UIAlertController(title: "Error", message: "Photos Gallery isn't working properly on this iOS device.", preferredStyle:.alert)
+                                 
+            
+                                 alert.addAction(UIAlertAction(title:"OK", style:.cancel, handler: nil))
+                                 present(alert, animated: true)
+        }
+    }
+    
+    func openSelectedImages(action:UIAlertAction)
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let bc = storyboard.instantiateViewController(withIdentifier: "showAddedImages") as! ShowAddedImagesViewController
         
+        bc.images = images
+        present(bc, animated: true)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        //print to check if the funciton is being called or not
+        print("Testing call imagePickerController didiFinishPickingWithMediaInfo")
         picker.dismiss(animated: true)
 
         guard let image = info[.originalImage] as? UIImage else {
@@ -106,7 +152,7 @@ class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UI
         }
 
         // print out the image size as a test
-        print(image)
+        //print(image)
         images.append(image)
         
         let imageName = "NotesPic" // your image name here
@@ -116,6 +162,34 @@ class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UI
         try? newImage.pngData()?.write(to: imageUrl)
     }
     
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        let alert = UIAlertController(title: "Warning", message: "Are you sure you want to discard the note. All the chages will not be saved", preferredStyle:.alert)
+        
+        alert.addAction(UIAlertAction(title: "Discard", style: .destructive, handler: handle))
+        alert.addAction(UIAlertAction(title:"Cancel", style:.cancel, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    func handle(alert:UIAlertAction)
+    {
+        titleObj.text = ""
+        note.text = ""
+        navigationItem.title = "New Note"
+    }
    
 }
 
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}

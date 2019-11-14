@@ -9,6 +9,8 @@
 import UIKit
 import CoreLocation
 import MapKit
+import MaterialComponents.MaterialSnackbar
+
 class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     
     var images:[UIImage] = []
@@ -25,7 +27,7 @@ class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UI
         
         alert.addAction(UIAlertAction(title: "View Attached Images", style: .default, handler: openSelectedImages(action:)))
        
-        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: save(action:)))
         
         alert.addAction(UIAlertAction(title: "Discard", style: .destructive, handler: nil))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -36,7 +38,7 @@ class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UI
     let locationmanager = CLLocationManager()
     
    
-    
+    var currentLocation:String!
     override func viewDidLoad() {
         super.viewDidLoad()
        // Do any additional setup after loading the view.
@@ -54,21 +56,7 @@ class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UI
            
     
            
-           if let currentLocation = locationmanager.location
-           {
-               let geo = CLGeocoder()
-         
-               geo.reverseGeocodeLocation(currentLocation, completionHandler: {(placemark, error) in
-    
-                   print(placemark![0].locality as Any)
-                   print(placemark![0].name as Any)
-          
-               })
-           }
-        else
-           {
-            
-        }
+           
         
     }
     
@@ -113,6 +101,53 @@ class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UI
                       present(alert, animated: true)
         }
     }
+    func validateForm() -> Bool
+    {
+        if(titleObj.text!.isEmpty || note.text.isEmpty)
+        {
+            return false
+        }
+        return true
+    }
+    func save(action:UIAlertAction) -> Void
+    {
+        if !validateForm()
+        {
+            return
+        }
+        if let currentLocation = locationmanager.location
+               {
+                   let geo = CLGeocoder()
+             
+                   geo.reverseGeocodeLocation(currentLocation, completionHandler: {(placemark, error) in
+        
+                    let newZote = ZoteNote(withTitle: self.titleObj.text!, content: self.note.text, location: placemark![0].name!)
+                    if !newZote.save()
+                    {
+                        let alert = UIAlertController(title: "Error", message: "Unexpected Error Occoured While Saving the Note.", preferredStyle:.alert)
+                                             
+                        
+                                             alert.addAction(UIAlertAction(title:"OK", style:.cancel, handler: nil))
+                        self.present(alert, animated: true)
+                    }
+                    else
+                    {
+                        let snackbar = MDCSnackbarMessage()
+                        snackbar.text = "\(self.titleObj.text!) Saved in Notes"
+                        MDCSnackbarManager.show(snackbar)
+                        self.tabBarController?.selectedIndex = 0
+                        
+                    }
+
+                 
+                   })
+               }
+            else
+               {
+                
+            }
+    
+            }
     func openGallary(action:UIAlertAction) -> Void
     {
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum)
@@ -135,11 +170,24 @@ class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UI
     
     func openSelectedImages(action:UIAlertAction)
     {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let bc = storyboard.instantiateViewController(withIdentifier: "showAddedImages") as! ShowAddedImagesViewController
+        if(images.count == 0)
+        {
+            let alert = UIAlertController(title: "Error", message: "No Images Attached.", preferredStyle:.alert)
+                                            
+                       
+                                            alert.addAction(UIAlertAction(title:"OK", style:.cancel, handler: nil))
+                                            present(alert, animated: true)
+        }
+        else
+        {
+            
         
-        bc.images = images
-        present(bc, animated: true)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let bc = storyboard.instantiateViewController(withIdentifier: "showAddedImages") as! ShowAddedImagesViewController
+            
+            bc.images = images
+            present(bc, animated: true)
+        }
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         //print to check if the funciton is being called or not
@@ -163,14 +211,7 @@ class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UI
     }
     
     
-    override func viewWillDisappear(_ animated: Bool) {
-        
-        let alert = UIAlertController(title: "Warning", message: "Are you sure you want to discard the note. All the chages will not be saved", preferredStyle:.alert)
-        
-        alert.addAction(UIAlertAction(title: "Discard", style: .destructive, handler: handle))
-        alert.addAction(UIAlertAction(title:"Cancel", style:.cancel, handler: nil))
-        present(alert, animated: true)
-    }
+   
     
     func handle(alert:UIAlertAction)
     {

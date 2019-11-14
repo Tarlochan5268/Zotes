@@ -13,6 +13,12 @@ class ShowAddedImagesViewController: UIViewController, UICollectionViewDelegate,
         return images.count
     }
     
+    @IBAction func doneTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       //  var cell = UICollectionViewCell.reusable
 
@@ -20,10 +26,12 @@ class ShowAddedImagesViewController: UIViewController, UICollectionViewDelegate,
         
         cell.imageView.image = images[indexPath.row]
         
+        print("Image Returning to the collectionView")
         return cell
         
         
     }
+    
     
 
     var images:[UIImage]!
@@ -35,6 +43,9 @@ class ShowAddedImagesViewController: UIViewController, UICollectionViewDelegate,
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        print("View Opened and images i got here are: \(images.count)")
     }
     
 

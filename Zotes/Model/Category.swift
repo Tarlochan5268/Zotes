@@ -11,6 +11,10 @@ import  CoreData
 import UIKit
 class Category
 {
+    
+    
+    
+    //adding changes
     var categoryName:String!
     var context:NSManagedObjectContext!
     init(withName:String)

@@ -16,7 +16,7 @@ class CategoryTableViewController: UITableViewController {
         
         self.navigationController?.title = "Categories"
         
-        let barbutton = UIBarButtonItem(title: "Add Category", style: .plain, target: self, action: #selector(addCategory(button:)))
+        let barbutton = UIBarButtonItem(title: "Categories", style: .plain, target: self, action: #selector(addCategory(button:)))
         
         self.navigationController?.navigationItem.rightBarButtonItem = barbutton
         
@@ -29,6 +29,13 @@ class CategoryTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Asked For Delete")
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
     
     @objc func addCategory(button:UIBarButtonItem)
     {
@@ -39,9 +46,20 @@ class CategoryTableViewController: UITableViewController {
                    let answer = ac.textFields![0]
                 
                 
+                let category = Category(withName: answer.text!)
+                if !category.save()
+                {
+                    print("An Error Occured While Saving the Category")
+                }
+                else
+                {
+                    print("Category Saved")
+                }
+                
                 self.data.append(answer.text!)
                    // do something interesting with "answer" here
                 print(self.data)
+                self.tableView.reloadData()
                }
 
                ac.addAction(submitAction)
@@ -61,6 +79,7 @@ class CategoryTableViewController: UITableViewController {
 
     //data to show is
     var data = ["Uncategorized"]
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -77,8 +96,8 @@ class CategoryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellForCategory", for: indexPath)
 
-        // Configure the cell...
-
+        cell.textLabel?.text = data[indexPath.row]
+        
         return cell
     }
     

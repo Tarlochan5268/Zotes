@@ -197,7 +197,7 @@ DEPENDENCIES:
   - MaterialComponents/Snackbar
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - BoringSSL-GRPC
     - Firebase
     - FirebaseABTesting
@@ -255,4 +255,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 4f57c06fa652ac96ad12acf754a618d33a2fb5c8
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4

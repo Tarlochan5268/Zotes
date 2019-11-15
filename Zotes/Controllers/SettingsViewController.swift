@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     var ref:DatabaseReference!
     var settingsOptions = [
-        "Sign In","About"
+        "Sign In","Categories","About"
     ]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,6 +52,14 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             
         }
         else if(indexPath.row == 1)
+        {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+             let aboutScreen = storyboard.instantiateViewController(withIdentifier:"categoryScreen")
+             
+             navigationController?.pushViewController(aboutScreen, animated: true)
+        }
+        else if(indexPath.row == 2)
         {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             

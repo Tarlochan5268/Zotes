@@ -26,6 +26,7 @@ class ShowAddedImagesViewController: UIViewController, UICollectionViewDelegate,
         
         cell.imageView.image = images[indexPath.row]
         
+        
         print("Image Returning to the collectionView")
         return cell
         

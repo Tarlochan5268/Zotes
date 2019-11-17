@@ -7,20 +7,46 @@
 //
 
 import UIKit
-
+import CoreData
 class CategoryTableViewController: UITableViewController {
-
+    // MARK: - View Did Load
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appdelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Categories")
+        
+        do
+        {
+            let x = try context.fetch(fetchRequest)
+            for category in x
+            {
+            
+                if category.value(forKey: "categoryName") != nil
+                {
+                    data.append((category.value(forKey: "categoryName")) as! String)
+                    
+                }
+            }
+            
+        }
+        catch
+        {
+            print("Error when fetching the categories")
+        }
 
         
         self.navigationController?.title = "Categories"
         
-        let barbutton = UIBarButtonItem(title: "Categories", style: .plain, target: self, action: #selector(addCategory(button:)))
+        let barbutton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addCategory(button:)))
         
         self.navigationController?.navigationItem.rightBarButtonItem = barbutton
         
-        self.navigationItem.title = "Add Category"
+        self.navigationItem.title = "Categories"
         self.navigationItem.rightBarButtonItem = barbutton
         
         // Uncomment the following line to preserve selection between presentations
@@ -29,9 +55,28 @@ class CategoryTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    // MARK: - Delete Row
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             print("Asked For Delete")
+            let appdelegate = UIApplication.shared.delegate as! AppDelegate
+                          let context = appdelegate.persistentContainer.viewContext
+                          
+                          let entity = NSEntityDescription.entity(forEntityName: "Categories", in: context)
+                          let category = NSManagedObject(entity: entity!, insertInto: context)
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Categories")
+            
+            do
+            {
+                let x = try context.fetch(fetchRequest)
+                context.delete(x.first!)
+              data.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            catch
+            {
+                
+            }
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
@@ -45,18 +90,24 @@ class CategoryTableViewController: UITableViewController {
                let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned ac] _ in
                    let answer = ac.textFields![0]
                 
+                let appdelegate = UIApplication.shared.delegate as! AppDelegate
+                let context = appdelegate.persistentContainer.viewContext
                 
-                let category = Category(withName: answer.text!)
-                if !category.save()
+                let entity = NSEntityDescription.entity(forEntityName: "Categories", in: context)
+                let category = NSManagedObject(entity: entity!, insertInto: context)
+                category.setValue(answer.text!, forKey: "categoryName")
+                
+                do
                 {
-                    print("An Error Occured While Saving the Category")
+                    try context.save()
+                                  self.data.append(answer.text!)
                 }
-                else
+                catch
                 {
-                    print("Category Saved")
+                    print("Error While Adding Category")
                 }
                 
-                self.data.append(answer.text!)
+              
                    // do something interesting with "answer" here
                 print(self.data)
                 self.tableView.reloadData()

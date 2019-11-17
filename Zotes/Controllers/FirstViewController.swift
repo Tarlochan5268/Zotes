@@ -39,6 +39,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             self.zotes[cellat].label = "white"
             self.tableView.reloadData()
+            print("Cell \(cellat) to WHITE")
             
         }
         let systemPink = UIAction(title: "Pink", image: UIImage(named: "systemPink")) { action in
@@ -46,24 +47,28 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             self.zotes[cellat].label = "systemPink"
             self.tableView.reloadData()
+                        print("Cell \(cellat) to PINK")
         }
         let systemTeal = UIAction(title: "Teal", image: UIImage(named: "systemTeal")) { action in
             // Show system share sheet
             
             self.zotes[cellat].label = "systemTeal"
             self.tableView.reloadData()
+                        print("Cell \(cellat) to TEAL")
         }
         let systemGreen = UIAction(title: "Green", image: UIImage(named: "systemGreen")) { action in
             // Show system share sheet
             
             self.zotes[cellat].label = "systemGreen"
             self.tableView.reloadData()
+                        print("Cell \(cellat) to GREEN")
         }
         let systemOrange = UIAction(title: "Orange", image: UIImage(named: "systemOrange")) { action in
             // Show system share sheet
             
             self.zotes[cellat].label = "systemOrange"
             self.tableView.reloadData()
+                        print("Cell \(cellat) to ORANGE")
         }
 
         // Create and return a UIMenu with the share action
@@ -85,7 +90,16 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell") as! ZotesCardTableViewCell
        
-               
+        if let color = zotes[indexPath.row].label
+        {
+            cell.backgroundColor = getColor(of: color)
+        }
+        else
+        {
+            cell.backgroundColor = .white
+        }
+        print("Adding Cell Number: \(indexPath.row) with color: \(zotes[indexPath.row].label)")
+        
         cell.title.text = zotes[indexPath.row].title!
         
         cell.sampleText.text = zotes[indexPath.row].content!
@@ -101,6 +115,32 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         
         
+    }
+    func getColor(of colorString:String) -> UIColor
+    {
+       if(colorString == "systemPink")
+        {
+            return .systemPink
+        }
+        
+        else if(colorString == "systemGreen")
+        {
+            return .systemGreen
+        }
+        
+        else if(colorString == "systemTeal")
+        {
+            return .systemTeal
+        }
+        
+        else if(colorString == "systemOrange")
+        {
+            return .systemOrange
+        }
+        else
+        {
+            return .white
+        }
     }
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -136,6 +176,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 context.delete(result[indexPath.row])
                 //print(zotes)
                 print(indexPath.row )
+                do
+                {
+                   try context.save()
+                }
+                catch{
+                    
+                    //Something shit has already happened.
+                }
                 zotes.remove(at: indexPath.row)
                 self.tableView.deleteRows(at: [indexPath], with: .fade)
                 tableView.reloadData()

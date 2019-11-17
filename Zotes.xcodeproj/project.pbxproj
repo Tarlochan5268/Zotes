@@ -29,6 +29,11 @@
 		2E6DBDD9237F451E003E20C3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6DBDD8237F451E003E20C3 /* Category.swift */; };
 		2E8A3165236DDB8D00282700 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8A3164236DDB8D00282700 /* SignUpViewController.swift */; };
 		2E8A322C2370CA9800282700 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8A322B2370CA9800282700 /* StringExtension.swift */; };
+		2EC579862381F19C0094DDB1 /* systemGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EC579822381F19B0094DDB1 /* systemGreen.png */; };
+		2EC579872381F19C0094DDB1 /* systemOrange.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EC579832381F19C0094DDB1 /* systemOrange.png */; };
+		2EC579882381F19C0094DDB1 /* systemTeal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EC579842381F19C0094DDB1 /* systemTeal.png */; };
+		2EC579892381F19C0094DDB1 /* systemPink.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EC579852381F19C0094DDB1 /* systemPink.png */; };
+		2EC5798B2381F1E60094DDB1 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EC5798A2381F1E60094DDB1 /* white.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +61,11 @@
 		2E6DBDD8237F451E003E20C3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		2E8A3164236DDB8D00282700 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2E8A322B2370CA9800282700 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		2EC579822381F19B0094DDB1 /* systemGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = systemGreen.png; sourceTree = "<group>"; };
+		2EC579832381F19C0094DDB1 /* systemOrange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = systemOrange.png; sourceTree = "<group>"; };
+		2EC579842381F19C0094DDB1 /* systemTeal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = systemTeal.png; sourceTree = "<group>"; };
+		2EC579852381F19C0094DDB1 /* systemPink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = systemPink.png; sourceTree = "<group>"; };
+		2EC5798A2381F1E60094DDB1 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
 		42F4154812C11888EE4A1118 /* Pods_Zotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E749FCF7AC65A7479E684E91 /* Pods-Zotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zotes.release.xcconfig"; path = "Target Support Files/Pods-Zotes/Pods-Zotes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +113,11 @@
 				2E00718D236A1E0500937B11 /* Assets.xcassets */,
 				2E007198236A24DC00937B11 /* zotes.png */,
 				2E00718F236A1E0500937B11 /* LaunchScreen.storyboard */,
+				2EC579822381F19B0094DDB1 /* systemGreen.png */,
+				2EC579832381F19C0094DDB1 /* systemOrange.png */,
+				2EC5798A2381F1E60094DDB1 /* white.png */,
+				2EC579852381F19C0094DDB1 /* systemPink.png */,
+				2EC579842381F19C0094DDB1 /* systemTeal.png */,
 				2E6DBDA423772F6C003E20C3 /* dots.png */,
 				2E04A8F5236DBE2300AD87BD /* GoogleService-Info.plist */,
 				2E007192236A1E0500937B11 /* Info.plist */,
@@ -230,10 +245,15 @@
 			files = (
 				2E007191236A1E0500937B11 /* LaunchScreen.storyboard in Resources */,
 				2E007199236A24DC00937B11 /* zotes.png in Resources */,
+				2EC579892381F19C0094DDB1 /* systemPink.png in Resources */,
+				2EC579862381F19C0094DDB1 /* systemGreen.png in Resources */,
 				2E04A8F6236DBE2400AD87BD /* GoogleService-Info.plist in Resources */,
+				2EC579872381F19C0094DDB1 /* systemOrange.png in Resources */,
 				2E6DBDA523772F6C003E20C3 /* dots.png in Resources */,
+				2EC5798B2381F1E60094DDB1 /* white.png in Resources */,
 				2E00718E236A1E0500937B11 /* Assets.xcassets in Resources */,
 				2E00718C236A1E0300937B11 /* Main.storyboard in Resources */,
+				2EC579882381F19C0094DDB1 /* systemTeal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

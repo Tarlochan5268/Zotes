@@ -9,13 +9,66 @@
 import UIKit
 import CoreData
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource , UIContextMenuInteractionDelegate{
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+ 
     
     @available(iOS 13.0, *)
-    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
-        <#code#>
+    func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: {suggestedActions in
+                   print(suggestedActions)
+            return self.makeContextMenu(for:indexPath.row) })
     }
+    /*
+    // MARK: - Sample 3D Touch
+    @available(iOS 13.0, *)
+    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+        
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: {suggestedActions in
+            print(suggestedActions)
+            return self.makeContextMenu(for:) })
+    }
+    */
     
+    @available(iOS 13.0, *)
+    func makeContextMenu(for cellat:Int) -> UIMenu
+    {
+       
+        let nolabel = UIAction(title: "No Label", image: UIImage(named: "white")) { action in
+            // Show system share sheet
+            
+            self.zotes[cellat].label = "white"
+            self.tableView.reloadData()
+            
+        }
+        let systemPink = UIAction(title: "Pink", image: UIImage(named: "systemPink")) { action in
+            // Show system share sheet
+            
+            self.zotes[cellat].label = "systemPink"
+            self.tableView.reloadData()
+        }
+        let systemTeal = UIAction(title: "Teal", image: UIImage(named: "systemTeal")) { action in
+            // Show system share sheet
+            
+            self.zotes[cellat].label = "systemTeal"
+            self.tableView.reloadData()
+        }
+        let systemGreen = UIAction(title: "Green", image: UIImage(named: "systemGreen")) { action in
+            // Show system share sheet
+            
+            self.zotes[cellat].label = "systemGreen"
+            self.tableView.reloadData()
+        }
+        let systemOrange = UIAction(title: "Orange", image: UIImage(named: "systemOrange")) { action in
+            // Show system share sheet
+            
+            self.zotes[cellat].label = "systemOrange"
+            self.tableView.reloadData()
+        }
+
+        // Create and return a UIMenu with the share action
+        return UIMenu(title: "Add Label", children: [nolabel, systemPink, systemTeal, systemGreen, systemOrange])
+    }
     
   
     var zotes:[Zote] = []
@@ -31,12 +84,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell") as! ZotesCardTableViewCell
-        if #available(iOS 13.0, *) {
-            let interaction = UIContextMenuInteraction(delegate: self)
-            
-        } else {
-            // Fallback on earlier versions
-        }
+       
                
         cell.title.text = zotes[indexPath.row].title!
         

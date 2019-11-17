@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Categories" representedClassName="Categories" syncable="YES" codeGenerationType="class">
         <attribute name="categoryName" optional="YES" attributeType="String"/>
         <relationship name="zote" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Zote" inverseName="category" inverseEntity="Zote"/>
@@ -7,12 +7,13 @@
     <entity name="Zote" representedClassName="Zote" syncable="YES" codeGenerationType="class">
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="label" optional="YES" attributeType="String"/>
         <attribute name="location" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categories" inverseName="zote" inverseEntity="Categories"/>
     </entity>
     <elements>
         <element name="Categories" positionX="-230.65625" positionY="7.3515625" width="128" height="73"/>
-        <element name="Zote" positionX="-54" positionY="-9" width="128" height="118"/>
+        <element name="Zote" positionX="-54" positionY="-9" width="128" height="133"/>
     </elements>
 </model>

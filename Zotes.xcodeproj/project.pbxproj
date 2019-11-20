@@ -19,6 +19,8 @@
 		2E04A8F4236DB28500AD87BD /* AboutApplicationtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E04A8F3236DB28500AD87BD /* AboutApplicationtViewController.swift */; };
 		2E04A8F6236DBE2400AD87BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E04A8F5236DBE2300AD87BD /* GoogleService-Info.plist */; };
 		2E04A8F8236DC05F00AD87BD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E04A8F7236DC05F00AD87BD /* SignInViewController.swift */; };
+		2E44AB132382133C00C81CAC /* SaveNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E44AB122382133C00C81CAC /* SaveNoteViewController.swift */; };
+		2E44AB152384D6F500C81CAC /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E44AB142384D6F500C81CAC /* FilterViewController.swift */; };
 		2E6DBDA023760C29003E20C3 /* Zotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E6DBD9E23760C29003E20C3 /* Zotes.xcdatamodeld */; };
 		2E6DBDA32376FC8E003E20C3 /* ZotesCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6DBDA22376FC8E003E20C3 /* ZotesCardTableViewCell.swift */; };
 		2E6DBDA523772F6C003E20C3 /* dots.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E6DBDA423772F6C003E20C3 /* dots.png */; };
@@ -51,6 +53,8 @@
 		2E04A8F3236DB28500AD87BD /* AboutApplicationtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutApplicationtViewController.swift; sourceTree = "<group>"; };
 		2E04A8F5236DBE2300AD87BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2E04A8F7236DC05F00AD87BD /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		2E44AB122382133C00C81CAC /* SaveNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNoteViewController.swift; sourceTree = "<group>"; };
+		2E44AB142384D6F500C81CAC /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		2E6DBD9F23760C29003E20C3 /* Zotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zotes.xcdatamodel; sourceTree = "<group>"; };
 		2E6DBDA22376FC8E003E20C3 /* ZotesCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZotesCardTableViewCell.swift; sourceTree = "<group>"; };
 		2E6DBDA423772F6C003E20C3 /* dots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dots.png; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 				2E8A3164236DDB8D00282700 /* SignUpViewController.swift */,
 				2E6DBDA6237747DB003E20C3 /* ShowAddedImagesViewController.swift */,
 				2E6DBDD6237F27A9003E20C3 /* CategoryTableViewController.swift */,
+				2E44AB122382133C00C81CAC /* SaveNoteViewController.swift */,
+				2E44AB142384D6F500C81CAC /* FilterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -309,6 +315,7 @@
 				2E007189236A1E0300937B11 /* CreateNoteViewController.swift in Sources */,
 				2E8A3165236DDB8D00282700 /* SignUpViewController.swift in Sources */,
 				2E6DBDD5237CD6EF003E20C3 /* Zote.swift in Sources */,
+				2E44AB152384D6F500C81CAC /* FilterViewController.swift in Sources */,
 				2E007185236A1E0300937B11 /* AppDelegate.swift in Sources */,
 				2E04A8F8236DC05F00AD87BD /* SignInViewController.swift in Sources */,
 				2E6DBDA023760C29003E20C3 /* Zotes.xcdatamodeld in Sources */,
@@ -317,6 +324,7 @@
 				2E6DBDA7237747DB003E20C3 /* ShowAddedImagesViewController.swift in Sources */,
 				2E8A322C2370CA9800282700 /* StringExtension.swift in Sources */,
 				2E04A8F4236DB28500AD87BD /* AboutApplicationtViewController.swift in Sources */,
+				2E44AB132382133C00C81CAC /* SaveNoteViewController.swift in Sources */,
 				2E6DBDD9237F451E003E20C3 /* Category.swift in Sources */,
 				2E007187236A1E0300937B11 /* FirstViewController.swift in Sources */,
 				2E6DBDA92377487C003E20C3 /* ShowAddedImageCollectionViewCell.swift in Sources */,

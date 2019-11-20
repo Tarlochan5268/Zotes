@@ -9,8 +9,74 @@
 import UIKit
 import CoreData
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
  
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            let appdelegate = UIApplication.shared.delegate as! AppDelegate
+                                    let context = appdelegate.persistentContainer.viewContext
+                                    
+                                 //   let entity = NSEntityDescription.entity(forEntityName: "Categories", in: context)
+                                 //   let category = NSManagedObject(entity: entity!, insertInto: context)
+            
+            
+                      let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Zote")
+            let predicate1 = NSPredicate(format: "title contains %@", searchText)
+            let predicate2 = NSPredicate(format: "content contains %@", searchText)
+            let compound = NSCompoundPredicate(type: .or, subpredicates: [predicate1, predicate2])
+           // fetchRequest.predicate = compound
+            
+                      do
+                      {
+                          let x = try context.fetch(fetchRequest) as! [Zote]
+                        zotes = x
+                        tableView.reloadData()
+                 
+                          //context.delete(x.first!)
+                       // data.remove(at: indexPath.row)
+                      // self.tableView.deleteRows(at: [indexPath], with: .fade)
+                      }
+                      catch
+                      {
+                          print("Some error")
+                      }
+            
+        }
+        else
+        {
+            
+        
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+                                let context = appdelegate.persistentContainer.viewContext
+                                
+                             //   let entity = NSEntityDescription.entity(forEntityName: "Categories", in: context)
+                             //   let category = NSManagedObject(entity: entity!, insertInto: context)
+        
+        
+                  let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Zote")
+        let predicate1 = NSPredicate(format: "title contains %@", searchText)
+        let predicate2 = NSPredicate(format: "content contains %@", searchText)
+        let compound = NSCompoundPredicate(type: .or, subpredicates: [predicate1, predicate2])
+        fetchRequest.predicate = compound
+        
+                  do
+                  {
+                      let x = try context.fetch(fetchRequest) as! [Zote]
+                    zotes = x
+                    tableView.reloadData()
+             
+                      //context.delete(x.first!)
+                   // data.remove(at: indexPath.row)
+                  // self.tableView.deleteRows(at: [indexPath], with: .fade)
+                  }
+                  catch
+                  {
+                      print("Some error")
+                  }
+        print(searchText)
+        }
+    }
     
     @available(iOS 13.0, *)
     func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
@@ -29,7 +95,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return self.makeContextMenu(for:) })
     }
     */
-    
+    // MARK: 3D TOUCH IMPLEMENTATION
     @available(iOS 13.0, *)
     func makeContextMenu(for cellat:Int) -> UIMenu
     {
@@ -85,7 +151,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
-    
+    @IBOutlet weak var searchBar: UISearchBar!
+    //MARK: - CELL SENDING
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell") as! ZotesCardTableViewCell
@@ -93,6 +160,19 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if let color = zotes[indexPath.row].label
         {
             cell.backgroundColor = getColor(of: color)
+            zotes[indexPath.row].label = color
+            
+            let appdelegate = UIApplication.shared.delegate as! AppDelegate
+                   let context = appdelegate.persistentContainer.viewContext
+            do
+            {
+                try context.save()
+            }
+            catch
+            {
+                //fuck swift and ios
+            }
+
         }
         else
         {
@@ -112,10 +192,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func filterTapped(_ sender: Any) {
         
         // MARK: - To BE Done By Tarlochan
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let popupvc = storyboard.instantiateViewController(withIdentifier: "filterVC")
+        present(popupvc, animated: true, completion: nil)
         
         
     }
+    // MARK: - COLOR OPTIONS
     func getColor(of colorString:String) -> UIColor
     {
        if(colorString == "systemPink")
@@ -142,11 +225,20 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return .white
         }
     }
-    @IBOutlet weak var searchBar: UISearchBar!
+    
+    
+    
+    
+    
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        searchBar.delegate = self
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+               tap.cancelsTouchesInView = false
+        tableView.addGestureRecognizer(tap)
+        view.addGestureRecognizer(tap)
        
         
         self.tableView.rowHeight = 100
@@ -204,6 +296,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewWillAppear(_ animated: Bool) {
         
+        
+        print("Appearing")
         let appdelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appdelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Zote")
@@ -286,3 +380,4 @@ extension Date
         return dateFormatterPrint.string(from: self)
     }
 }
+

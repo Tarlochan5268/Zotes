@@ -12,7 +12,7 @@ import MapKit
 import MaterialComponents.MaterialSnackbar
 
 class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
-    
+    var saved = false
     var images:[UIImage] = []
    
     @IBAction func optionsTapped(_ sender: Any) {
@@ -77,7 +77,11 @@ class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UI
     }
     override func viewWillAppear(_ animated: Bool) {
         
-        print(images)
+        if(saved)
+        {
+            self.tabBarController?.selectedIndex = 0
+        }
+        //print(images)
     }
     @IBOutlet weak var note: UITextView!
     
@@ -121,7 +125,22 @@ class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UI
              
                    geo.reverseGeocodeLocation(currentLocation, completionHandler: {(placemark, error) in
         
-                    let newZote = ZoteNote(withTitle: self.titleObj.text!, content: self.note.text, location: placemark![0].name!)
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "chooseCategoryVC") as! SaveNoteViewController
+                    
+                    vc.titleofnot = self.titleObj.text
+                    vc.content = self.note.text
+                    vc.date = Date()
+                    vc.location = placemark![0].name!
+                    vc.images = self.images
+                    
+                    vc.senderr = self
+                    
+                    self.present(vc, animated: true, completion: nil)
+                    print("NEW VIEWCONTROLLER")
+                    
+                    /*let newZote = ZoteNote(withTitle: self.titleObj.text!, content: self.note.text, location: placemark![0].name!)
                     if !newZote.save()
                     {
                         let alert = UIAlertController(title: "Error", message: "Unexpected Error Occoured While Saving the Note.", preferredStyle:.alert)
@@ -138,7 +157,7 @@ class CreateNoteViewController: UIViewController , CLLocationManagerDelegate, UI
                         self.tabBarController?.selectedIndex = 0
                         
                     }
-
+                    */
                  
                    })
                }

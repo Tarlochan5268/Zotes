@@ -23,4 +23,5 @@ pod 'FirebaseMessaging'
 pod 'FirebaseRemoteConfig'
 pod 'FirebaseStorage'
 pod 'MaterialComponents/Snackbar'
+pod 'BottomPopup'
 end

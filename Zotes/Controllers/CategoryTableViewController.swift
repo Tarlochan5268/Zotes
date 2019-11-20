@@ -59,23 +59,46 @@ class CategoryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             print("Asked For Delete")
+            
+            if(indexPath.row == 0)
+            {
+                let alert = UIAlertController(title: "Unauthorized Action", message: "Uncategorized is a default category and cannot be deleted", preferredStyle: .alert)
+                               
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    
+                               
+                self.present(alert, animated: true)
+            }
+            else
+            {
+                
+            
             let appdelegate = UIApplication.shared.delegate as! AppDelegate
                           let context = appdelegate.persistentContainer.viewContext
                           
-                          let entity = NSEntityDescription.entity(forEntityName: "Categories", in: context)
-                          let category = NSManagedObject(entity: entity!, insertInto: context)
+                       //   let entity = NSEntityDescription.entity(forEntityName: "Categories", in: context)
+                       //   let category = NSManagedObject(entity: entity!, insertInto: context)
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Categories")
             
             do
             {
                 let x = try context.fetch(fetchRequest)
-                context.delete(x.first!)
+                context.delete(x[indexPath.row])
               data.remove(at: indexPath.row)
-                self.tableView.deleteRows(at: [indexPath], with: .fade)
+                do
+                {
+                    try context.save()
+                }
+                catch
+                {
+                    //fuck ios and swift
+                }
+                self.tableView.deleteRows(at: [indexPath], with: .middle)
             }
             catch
             {
                 
+            }
             }
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -129,7 +152,7 @@ class CategoryTableViewController: UITableViewController {
    
 
     //data to show is
-    var data = ["Uncategorized"]
+    var data:[String] = [String]()
     
     // MARK: - Table view data source
 

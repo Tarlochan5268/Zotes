@@ -27,9 +27,63 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         // Override point for customization after application launch.
         FirebaseApp.configure()
   
+        if let uncategorized = getCategory(of: "Uncategorized")
+        {
+            
+        }
+        else
+        {
+            let entity = NSEntityDescription.entity(forEntityName: "Categories", in: self.persistentContainer.viewContext)
+            let category = NSManagedObject(entity: entity!, insertInto: self.persistentContainer.viewContext)
+                           category.setValue("Uncategorized", forKey: "categoryName")
+                           
+                           do
+                           {
+                            try persistentContainer.viewContext.save()
+                                             
+                           }
+                           catch
+                           {
+                               print("Error While Adding Category")
+                           }
+                           
+        }
         
         return true
     }
+    func getCategory(of:String) -> Categories?
+       {
+           var returner:Categories? = nil
+           let appdelegate = UIApplication.shared.delegate as! AppDelegate
+                         let context = appdelegate.persistentContainer.viewContext
+                         
+                      //   let entity = NSEntityDescription.entity(forEntityName: "Categories", in: context)
+                      //   let category = NSManagedObject(entity: entity!, insertInto: context)
+           let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Categories")
+           
+           do
+           {
+               let x = try context.fetch(fetchRequest) as! [Categories]
+               print(x)
+               for category in x
+               {
+                   if let cname = category.categoryName
+                   {
+                       if cname == of {
+                           returner = category
+                       }
+                   }
+               }
+               //context.delete(x.first!)
+            // data.remove(at: indexPath.row)
+           // self.tableView.deleteRows(at: [indexPath], with: .fade)
+           }
+           catch
+           {
+               
+           }
+           return returner
+       }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

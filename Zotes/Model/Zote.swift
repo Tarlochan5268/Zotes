@@ -29,8 +29,11 @@ class ZoteNote
     }
     func save() -> Bool
     {
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appdelegate.persistentContainer.viewContext
+      
         let entity = NSEntityDescription.entity(forEntityName: "Zote", in: self.context!)
-        let zote = NSManagedObject(entity: entity!, insertInto: context!)
+        let zote = NSManagedObject(entity: entity!, insertInto: context)
         
         zote.setValue(self.title, forKey: "title")
         zote.setValue(self.location, forKey: "location")

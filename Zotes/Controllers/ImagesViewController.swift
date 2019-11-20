@@ -21,6 +21,7 @@ class ImagesViewController: UIViewController {
     let systemGreen:UIImage = UIImage(named: "systemGreen")!
     let systemOrange:UIImage = UIImage(named: "systemOrange")!
     var images:[UIImage]!
+    var image:UIImage?
     @IBAction func goBack(_ sender: Any)
     {
         self.dismiss(animated: true, completion: nil)
@@ -33,34 +34,45 @@ class ImagesViewController: UIViewController {
         imageView.backgroundColor = .white
         imageView.contentMode = .scaleToFill
         super.viewDidLoad()
+        if let data = zotes[rowSelected!].images
+        {
+            image = UIImage(data:data as Data)
+            
+            print(data)
+            print(image)
+            images = [image!]
+            imageView.image = image
+        }
+        
+       
 
         // Do any additional setup after loading the view.
     }
     
     @IBAction func nextImage(_ sender: Any)
     {
-        if(index == 3)
-        {
-            index = 0
-        }
-        else
-        {
-            index = index + 1
-        }
-        imageView.image =  images[index]
+//        if(index == 1)
+//        {
+//            index = 0
+//        }
+//        else
+//        {
+//            index = index + 1
+//        }
+//        imageView.image =  images[index]
     }
     
     @IBAction func prevImage(_ sender: Any)
     {
-        if(index == 0)
-        {
-            index = 3
-        }
-        else
-        {
-            index = index - 1
-        }
-        imageView.image =  images[index]
+//        if(index == 0)
+//        {
+//            index = 1
+//        }
+//        else
+//        {
+//            index = index - 1
+//        }
+//        imageView.image =  images[index]
     }
     /*
     // MARK: - Navigation

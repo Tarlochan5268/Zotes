@@ -193,10 +193,28 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         // MARK: - To BE Done By Tarlochan
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let popupvc = storyboard.instantiateViewController(withIdentifier: "filterVC")
+        let popupvc = storyboard.instantiateViewController(withIdentifier: "filterVC") as! FilterViewController
+        
+        popupvc.senderr = self
         present(popupvc, animated: true, completion: nil)
         
         
+    }
+    var inAsec = true
+    func update(index:Int)
+    {
+        if(index == 0 && inAsec)
+        {
+            zotes.reverse()
+            inAsec = false
+            tableView.reloadData()
+        }
+        else if(index == 1 && !inAsec)
+        {
+            zotes.reverse()
+            inAsec = true
+            tableView.reloadData()
+        }
     }
     // MARK: - COLOR OPTIONS
     func getColor(of colorString:String) -> UIColor
@@ -256,7 +274,11 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let vc = segue.destination as! NoteViewController
             vc.rowSelected = self.tableView.indexPathForSelectedRow?.row
             vc.zotes = zotes
-            vc.colour = getColor(of: zotes[self.tableView.indexPathForSelectedRow!.row].label!)
+            vc.colour = getColor(of: zotes[self.tableView.indexPathForSelectedRow!.row].label ?? "white")
+            
+           
+            
+            
         }
     }
     

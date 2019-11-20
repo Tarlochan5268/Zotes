@@ -10,6 +10,8 @@ import UIKit
 
 class FilterViewController: UIViewController {
 
+    
+    var senderr:FirstViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,9 @@ class FilterViewController: UIViewController {
     @IBOutlet weak var date: UISegmentedControl!
     
     @IBAction func doneTapped(_ sender: UIBarButtonItem) {
+        
+        senderr.update(index: date.selectedSegmentIndex)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelTapped(_ sender: Any) {

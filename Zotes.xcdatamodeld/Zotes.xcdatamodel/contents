@@ -4,12 +4,10 @@
         <attribute name="categoryName" optional="YES" attributeType="String"/>
         <relationship name="zote" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Zote" inverseName="category" inverseEntity="Zote"/>
     </entity>
-    <entity name="Images" representedClassName="Images" syncable="YES" codeGenerationType="class">
-        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
-    </entity>
     <entity name="Zote" representedClassName="Zote" syncable="YES" codeGenerationType="class">
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="images" optional="YES" attributeType="Binary"/>
         <attribute name="label" optional="YES" attributeType="String"/>
         <attribute name="location" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
@@ -17,7 +15,6 @@
     </entity>
     <elements>
         <element name="Categories" positionX="-230.65625" positionY="7.3515625" width="128" height="73"/>
-        <element name="Zote" positionX="-54" positionY="-9" width="128" height="133"/>
-        <element name="Images" positionX="-144" positionY="45" width="128" height="58"/>
+        <element name="Zote" positionX="-54" positionY="-9" width="128" height="148"/>
     </elements>
 </model>

@@ -106,15 +106,49 @@ class SaveNoteViewController: BottomPopupViewController, UITableViewDelegate, UI
 
                 zote.setValue(getCategory(of: data[index]), forKey: "category")
             }
+        
+       
+        
         else
         {
             zote.setValue(getCategory(of: "Uncategorized"), forKey: "category")
         }
         
-         
+         //let imageToUpload = zote.mutableSetValue(forKey: "images")
+        
+//        if images.count != 0
+//        {
+//            for image in images
+//            {
+//                let imageentity = NSEntityDescription.entity(forEntityName: "Images", in: context)
+//                let cdimageobject = NSManagedObject(entity: imageentity!, insertInto: context)
+//                cdimageobject.setValue(, forKey: ")
+//            }
+//        }
+//
+        if images.count > 0
+        {
+            
+            print(images[0].pngData())
+            zote.setValue(images[0].pngData(), forKey:"images")
+        }
+        
+        
          do
          {
              try context.save()
+//            if images.count != 0
+//                   {
+//                       for image in images
+//                       {
+//                           let imageentity = NSEntityDescription.entity(forEntityName: "Images", in: context)
+//                           let cdimageobject = NSManagedObject(entity: imageentity!, insertInto: context)
+//                        cdimageobject.setValue(image.pngData(), forKey: "imageData")
+//                        cdimageobject.setValue(zote as! Zote, forKey: "zote")
+//                        try context.save()
+//                       }
+//                   }
+            
              return true
              
          }
@@ -145,11 +179,13 @@ class SaveNoteViewController: BottomPopupViewController, UITableViewDelegate, UI
             {
                 if let cname = category.categoryName
                 {
-                    if cname == of {
+                    if cname == of
+                    {
                         returner = category
                     }
                 }
             }
+            
             //context.delete(x.first!)
          // data.remove(at: indexPath.row)
         // self.tableView.deleteRows(at: [indexPath], with: .fade)
@@ -161,6 +197,11 @@ class SaveNoteViewController: BottomPopupViewController, UITableViewDelegate, UI
         return returner
     }
      
+    func saveImages() -> Bool
+    {
+        
+        return true
+    }
     
 
 }

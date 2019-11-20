@@ -14,8 +14,11 @@ class NoteViewController: UIViewController {
     @IBAction func shareTapped(_ sender: UIBarButtonItem) {
     }
     
-    @IBAction func mapTapped(_ sender: UIBarButtonItem) {
+    @IBAction func mapTapped(_ sender: UIBarButtonItem)
+    {
+        performSegue(withIdentifier: "MapVC", sender: self)
     }
+    
     @IBAction func goBackHome(_ sender: Any)
     {
         view.window!.rootViewController?.dismiss(animated: true, completion: nil)
@@ -31,6 +34,12 @@ class NoteViewController: UIViewController {
             vc.rowSelected = self.rowSelected
             vc.zotes = self.zotes
             vc.colour = self.colour
+        }
+        else if(segue.identifier == "MapVC")
+        {
+            let vc = segue.destination as! MapViewController
+            vc.rowSelected = self.rowSelected
+            vc.zotes = self.zotes
         }
     }
     @IBOutlet weak var navBar: UINavigationBar!

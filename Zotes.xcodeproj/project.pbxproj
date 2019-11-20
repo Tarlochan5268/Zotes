@@ -38,6 +38,7 @@
 		2EC5798B2381F1E60094DDB1 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EC5798A2381F1E60094DDB1 /* white.png */; };
 		84ABFBF42385041700C96234 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ABFBF32385041700C96234 /* NoteViewController.swift */; };
 		84ABFBF623852A2A00C96234 /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ABFBF523852A2A00C96234 /* ImagesViewController.swift */; };
+		84F91F902385FDAC0037378A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F91F8F2385FDAC0037378A /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		42F4154812C11888EE4A1118 /* Pods_Zotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84ABFBF32385041700C96234 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		84ABFBF523852A2A00C96234 /* ImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
+		84F91F8F2385FDAC0037378A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E749FCF7AC65A7479E684E91 /* Pods-Zotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zotes.release.xcconfig"; path = "Target Support Files/Pods-Zotes/Pods-Zotes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +150,7 @@
 				2E44AB142384D6F500C81CAC /* FilterViewController.swift */,
 				84ABFBF32385041700C96234 /* NoteViewController.swift */,
 				84ABFBF523852A2A00C96234 /* ImagesViewController.swift */,
+				84F91F8F2385FDAC0037378A /* MapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				2E007189236A1E0300937B11 /* CreateNoteViewController.swift in Sources */,
 				2E8A3165236DDB8D00282700 /* SignUpViewController.swift in Sources */,
 				2E6DBDD5237CD6EF003E20C3 /* Zote.swift in Sources */,
+				84F91F902385FDAC0037378A /* MapViewController.swift in Sources */,
 				2E44AB152384D6F500C81CAC /* FilterViewController.swift in Sources */,
 				84ABFBF623852A2A00C96234 /* ImagesViewController.swift in Sources */,
 				84ABFBF42385041700C96234 /* NoteViewController.swift in Sources */,

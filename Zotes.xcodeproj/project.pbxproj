@@ -36,6 +36,8 @@
 		2EC579882381F19C0094DDB1 /* systemTeal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EC579842381F19C0094DDB1 /* systemTeal.png */; };
 		2EC579892381F19C0094DDB1 /* systemPink.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EC579852381F19C0094DDB1 /* systemPink.png */; };
 		2EC5798B2381F1E60094DDB1 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EC5798A2381F1E60094DDB1 /* white.png */; };
+		84ABFBF42385041700C96234 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ABFBF32385041700C96234 /* NoteViewController.swift */; };
+		84ABFBF623852A2A00C96234 /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ABFBF523852A2A00C96234 /* ImagesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		2EC579852381F19C0094DDB1 /* systemPink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = systemPink.png; sourceTree = "<group>"; };
 		2EC5798A2381F1E60094DDB1 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
 		42F4154812C11888EE4A1118 /* Pods_Zotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84ABFBF32385041700C96234 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		84ABFBF523852A2A00C96234 /* ImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
 		E749FCF7AC65A7479E684E91 /* Pods-Zotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zotes.release.xcconfig"; path = "Target Support Files/Pods-Zotes/Pods-Zotes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +146,8 @@
 				2E6DBDD6237F27A9003E20C3 /* CategoryTableViewController.swift */,
 				2E44AB122382133C00C81CAC /* SaveNoteViewController.swift */,
 				2E44AB142384D6F500C81CAC /* FilterViewController.swift */,
+				84ABFBF32385041700C96234 /* NoteViewController.swift */,
+				84ABFBF523852A2A00C96234 /* ImagesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -316,6 +322,8 @@
 				2E8A3165236DDB8D00282700 /* SignUpViewController.swift in Sources */,
 				2E6DBDD5237CD6EF003E20C3 /* Zote.swift in Sources */,
 				2E44AB152384D6F500C81CAC /* FilterViewController.swift in Sources */,
+				84ABFBF623852A2A00C96234 /* ImagesViewController.swift in Sources */,
+				84ABFBF42385041700C96234 /* NoteViewController.swift in Sources */,
 				2E007185236A1E0300937B11 /* AppDelegate.swift in Sources */,
 				2E04A8F8236DC05F00AD87BD /* SignInViewController.swift in Sources */,
 				2E6DBDA023760C29003E20C3 /* Zotes.xcdatamodeld in Sources */,

@@ -248,6 +248,17 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "NoteVC", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "NoteVC") {
+            let vc = segue.destination as! NoteViewController
+            vc.rowSelected = self.tableView.indexPathForSelectedRow?.row
+            vc.zotes = zotes
+            vc.colour = getColor(of: zotes[self.tableView.indexPathForSelectedRow!.row].label!)
+        }
+    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {

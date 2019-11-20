@@ -11,7 +11,11 @@ import UIKit
 class NoteViewController: UIViewController {
 
 
-
+    @IBAction func shareTapped(_ sender: UIBarButtonItem) {
+    }
+    
+    @IBAction func mapTapped(_ sender: UIBarButtonItem) {
+    }
     @IBAction func goBackHome(_ sender: Any)
     {
         view.window!.rootViewController?.dismiss(animated: true, completion: nil)

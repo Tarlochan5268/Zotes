@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,12 +36,24 @@
                                                 <action selector="goBackHome:" destination="21y-4g-0lZ" id="N2z-GK-DND"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Attachments" image="paperclip" catalog="system" id="loV-Hr-ibX">
-                                            <connections>
-                                                <action selector="goToAttachments:" destination="21y-4g-0lZ" id="dkb-Lc-UOw"/>
-                                                <segue destination="OOr-29-hlS" kind="show" identifier="ImagesVC" id="m0R-gl-wny"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem title="Attachments" image="paperclip" catalog="system" id="loV-Hr-ibX">
+                                                <connections>
+                                                    <action selector="goToAttachments:" destination="21y-4g-0lZ" id="dkb-Lc-UOw"/>
+                                                    <segue destination="OOr-29-hlS" kind="show" identifier="ImagesVC" id="m0R-gl-wny"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Item" image="map" catalog="system" id="AzB-XV-n4c">
+                                                <connections>
+                                                    <action selector="mapTapped:" destination="21y-4g-0lZ" id="25t-pU-eOj"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Item" image="paperplane" catalog="system" id="TiJ-oq-8gI">
+                                                <connections>
+                                                    <action selector="shareTapped:" destination="21y-4g-0lZ" id="3Mf-VX-hAz"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -826,7 +838,9 @@
         <image name="create" width="25" height="23"/>
         <image name="dashboard" width="25" height="25"/>
         <image name="list.bullet" catalog="system" width="64" height="44"/>
+        <image name="map" catalog="system" width="64" height="56"/>
         <image name="paperclip" catalog="system" width="64" height="64"/>
+        <image name="paperplane" catalog="system" width="64" height="60"/>
         <image name="settings" width="25" height="25"/>
     </resources>
 </document>

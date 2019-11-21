@@ -25,10 +25,11 @@ class MapViewController: UIViewController ,CLLocationManagerDelegate, MKMapViewD
         super.viewDidLoad()
         mapView.delegate = self
         mapView.showsUserLocation = true
-        
         let location = CLLocation(latitude: 43.772563, longitude: -79.334054)
         let annotation = MKPointAnnotation()
         annotation.coordinate = location.coordinate
+        annotation.title = zotes[rowSelected!].title
+        annotation.subtitle = zotes[rowSelected!].location
         mapView.addAnnotation(annotation)
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let region = MKCoordinateRegion(center:center, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))

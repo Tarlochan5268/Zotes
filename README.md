@@ -11,3 +11,104 @@ I am using the third party libraries to support this project. They are mentioned
 # Screenshots
 Screenshots and working of the Application is give in this link below
  - https://drive.google.com/file/d/1Ypy4EEugimYbVX895ys9n2xbXQCJXX_O/view?usp=sharing
+
+<p>
+<img
+align="left"
+src="/ss_create.png"
+raw=true
+width="20%"
+height = "30%"
+/> 
+</p>
+
+
+<p>
+<img
+align="left"
+src="/ss_attachment.png"
+raw=true
+width="20%"
+height = "30%"
+/> 
+</p>
+
+<p>
+<img
+align="left"
+src="/ss_categories.png"
+raw=true
+width="20%"
+height = "30%"
+/> 
+</p>
+
+<p>
+<img
+align="left"
+src="/ss_dashboard.png"
+raw=true
+width="20%"
+height = "30%"
+/> 
+</p>
+
+<p>
+<img
+align="left"
+src="/ss_filters.png"
+raw=true
+width="20%"
+height = "30%"
+/> 
+</p>
+
+<p>
+<img
+align="left"
+src="/ss_3dtouch.png"
+raw=true
+width="20%"
+height = "30%"
+/> 
+</p>
+
+<p>
+<img
+align="left"
+src="/ss_view.png"
+raw=true
+width="20%"
+height = "30%"
+/> 
+</p>
+
+<p>
+<img
+align="left"
+src="/ss_map.png"
+raw=true
+width="20%"
+height = "30%"
+/> 
+</p>
+
+<p>
+<img
+align="left"
+src="/ss_settings.png"
+raw=true
+width="20%"
+height = "30%"
+/> 
+</p>
+
+<p>
+<img
+align="left"
+src="/ss_about.png"
+raw=true
+width="20%"
+height = "30%"
+/> 
+</p>
